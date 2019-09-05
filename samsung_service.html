@@ -254,11 +254,12 @@
       $(".cafelist").load("samsung-service.html", function() {
         $("#edit-tbody> tr", this).each(function() {
           var temp = {
-            service: $("td", this).eq(0).text(),
-            district: $("td", this).eq(1).text(),
-            area: $("td", this).eq(2).text(),
+            center: $("td", this).eq(0).text(),
+            division: $("td", this).eq(1).text(),
+            district: $("td", this).eq(2).text(),
             address: $("td", this).eq(3).text(),
-            loc: $("td", this).eq(4).data('id')
+            contact_point: $("td", this).eq(4).text(),
+            contact_no: $("td", this).eq(5).text()
           };
           dataArr.push(temp);
         });
@@ -284,7 +285,7 @@
 
         if ($('#district').prop('selectedIndex') == 0) {
 
-          $(".cafelist").hide();
+          $(".cafelist").show();
         }
         initialize();
       });
@@ -312,11 +313,12 @@
               area.push(value.area);
               retailsData.push(value);
 
-              tbody.append('<tr><td>' + value.service + '</td>' +
+              tbody.append('<tr><td>' + value.center + '</td>' +
+                '<td>' + value.divistion + '</td>' +
                 '<td>' + value.district + '</td>' +
-                '<td>' + value.area + '</td>' +
                 '<td>' + value.address + '</td>' +
-                '<td data-id=' + value.loc + '><span style="cursor:pointer"><i class="fa fa-map-marker" aria-hidden="true"></i></span></td></tr>'
+                '<td>' + value.contact_point + '</td>' +
+                '<td>' + value.contact_no + '</td></tr>'
               );
 
 
