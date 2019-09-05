@@ -58,11 +58,11 @@ top.location = window.location
         <style>
             .wraper #main{
                 margin-top: 40px;
-            }     
-            .gmnoprint img {
-                max-width: none; 
             }
-            
+            .gmnoprint img {
+                max-width: none;
+            }
+
             #map_canvas { height: 625px; }
 
             @media only screen and (max-width: 760px) {
@@ -119,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </header>
-        <!-- / HEADER -- 
+        <!-- / HEADER --
         <!-- SECTION-2 -->
         <section id="Section-2">
             <div class="container">
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <font size="+2" style="color:#FFF"> SMART Cafe Locator</b></font>
 
                         <br><br>
-                     
+
                         <div class="row">
                             <div class="span6 text-right" >
                                 <select class="form-control" id="district" name="district" style="width: 280px;" >
@@ -149,16 +149,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-                
-                            
+
+
                 <!-- Smartphone Cafe list -->
                 <div class="cafelist">
                     <div class="social-box" id="where">
                         <div class="body">
                         </div>
-                    </div>        
-                </div>                
-               
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -169,7 +169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="row">
                     <div class="span8">
                         <p>
-                            Samsung Call Center: <b style="letter-spacing:1px;">09612-300-300</b> (8 AM to 10 PM). <b style="letter-spacing:1px;">08000-300300</b> (toll free) 
+                            Samsung Call Center: <b style="letter-spacing:1px;">09612-300-300</b> (8 AM to 1:30 AM). <b style="letter-spacing:1px;">08000-300300</b> (toll free) 
                             <br/> © <script>document.write(new Date().getFullYear())</script> Samsung Mobile Bangladesh. All rights reserved.
                         </p>
                     </div>
@@ -198,7 +198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script src="assets/plugins/jquery.colorbox/jquery.colorbox-min.js"></script>
 
         <script src="assets/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-        
+
         <script src="assets/js/tables.dynamic.js"></script>
         <script src="assets/plugins/select/select2.min.js"></script>
         <script type="text/javascript">
@@ -223,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     $( "#store-tbody> tr", this ).each(function(){
                         var temp = {
-                                    district:$( "td", this ).eq(0).text(), 
+                                    district:$( "td", this ).eq(0).text(),
                                     area:$( "td", this ).eq(1).text(),
                                     retailName: $( "td", this ).eq(2).text(),
                                     address: $( "td", this ).eq(3).text(),
@@ -231,8 +231,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         };
                         dataArr.push(temp);
                     });
-                    
-                    
+
+
                     retailsData = dataArr;
 
                     $.each(dataArr, function( index, value ) {
@@ -254,10 +254,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     }
                     initialize();
                 });
-				
-				
+
+
                 $(document).on("change","select[name='district']",function(){
-   
+
                     var tempDis = $(this).val();
                     var area    = [];
                     var filter_data    = [];
@@ -353,15 +353,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     $('html,body').animate({scrollTop: $("#Section-2").offset().top},'slow');
                 });
-            
+
                 function initialize() {
                     var bounds = new google.maps.LatLngBounds();
                     map        = new google.maps.Map(document.getElementById('map_canvas'), {});
-                    
+
                     var info_window = new google.maps.InfoWindow({
                         content: 'loading'
                 });
-                
+
                 $.each( retailsData, function( index, value ) {
                     var locD = value.loc.split(",");
 
